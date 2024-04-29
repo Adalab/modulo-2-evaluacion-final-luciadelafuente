@@ -1,0 +1,19 @@
+.footer{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color:$vanilacolor;
+    margin-top: 30px;
+    &__image{
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+    }
+    &__text{
+        font-family: $mainFont;
+        font-size: 14px;
+        color:$yellowcolor;
+        align-content: center;
+    }
+
+}

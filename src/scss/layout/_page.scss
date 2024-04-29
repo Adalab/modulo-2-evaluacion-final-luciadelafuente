@@ -1,0 +1,115 @@
+.body{
+    height: 100vh;
+}
+.main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:30px;
+}
+.lists{
+    display: flex;
+    gap:100px;
+}
+
+.search{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:30px;
+    padding-bottom: 15px;
+    &__section{
+      &--input{
+        padding: 10px;
+        border-color: $vanilacolor;
+        border-radius: 15%;
+      }  
+      &--btn{
+        background-color: $vanilacolor;
+        font-family: $mainFont;
+        padding: 10px;
+        color: black;
+        font-size: 16px;
+        border-style: none;
+        border-radius: 15%;
+      }
+    }
+    &__text{
+        font-family: $mainFont;
+        color: $yellowcolor;
+        font-size: 20px;
+    }
+}
+
+.drink{
+    width: 200px;
+    height: 250px;
+    text-align: left;
+    padding: 20px;
+    list-style:none;
+    &__title{
+        font-family: $mainFont;
+        font-size: 20px;
+    }
+    &__image{
+        height: 160px;
+        object-fit: contain;
+    }
+}
+.favorites{
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    gap:20px;
+    padding: 20px;
+    text-align: left;
+    list-style:none;
+    margin-bottom: 20px;
+    &__maintitle{
+        font-family: $mainFont;
+        font-size: 25px;
+        color: $yellowcolor;
+        text-align: center;
+    }
+    &__title{
+        font-family: $mainFont;
+        font-size: 20px;
+    }
+    &__image{
+        height: 160px;
+        object-fit: contain;
+    }
+    &__btnx{
+        background-color: $vanilacolor;
+        padding:3px;
+    }
+    &__btnreset{
+        background-color: $vanilacolor;
+        font-family: $mainFont;
+        padding: 10px;
+        color: black;
+        font-size: 16px;
+        border-style: none;
+        border-radius: 15%;
+    }
+}
+
+.drinkslist{
+    padding: 20px;          
+}
+
+.drinkslist__maintitle{
+    font-family: $mainFont;
+    font-size: 25px;
+    color: $yellowcolor;
+    text-align: center;  
+}
+
+.favorites-changes{
+    background-color: $yellowcolor;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+
+.hidden {
+    display: none;
+  }
