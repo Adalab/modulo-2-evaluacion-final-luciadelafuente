@@ -6,6 +6,8 @@
     flex-direction: column;
     align-items: center;
     gap:30px;
+    background-color: $bluecolor;
+    padding: 50px;
 }
 .lists{
     display: flex;
@@ -13,11 +15,12 @@
 }
 
 .search{
+    width: 700px;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap:30px;
-    padding-bottom: 15px;
+    padding: 30px;
     &__section{
       &--input{
         padding: 10px;
@@ -28,7 +31,7 @@
         background-color: $vanilacolor;
         font-family: $mainFont;
         padding: 10px;
-        color: black;
+        color: $bluecolor;
         font-size: 16px;
         border-style: none;
         border-radius: 15%;
@@ -40,19 +43,26 @@
         font-size: 20px;
     }
 }
-
+.drinks__ul{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:20px;
+}
 .drink{
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 20px;
     width: 200px;
-    height: 250px;
     text-align: left;
     padding: 20px;
     list-style:none;
+    border: 3px solid $vanilacolor;
     &__title{
         font-family: $mainFont;
         font-size: 20px;
+        color: $vanilacolor;
     }
     &__image{
         height: 160px;
@@ -62,21 +72,38 @@
 .favorites{
     display: flex;
     flex-direction: column;
-    width: 200px;
+    align-items: center;
     gap:20px;
-    padding: 20px;
-    text-align: left;
-    list-style:none;
-    margin-bottom: 20px;
+    border: 3px solid $vanilacolor;   
+    width: 35%;
+    padding: 30px;
     &__maintitle{
         font-family: $mainFont;
         font-size: 25px;
         color: $yellowcolor;
         text-align: center;
+        padding:20px;
+    }
+    &__div{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap:20px;
+    }
+    &__text{
+        font-family: $mainFont;
+        color: $vanilacolor;
+        font-size: 20px;
+        text-align: center;
+    }
+    &__gift{
+        height: 160px;
+        object-fit: contain;
     }
     &__title{
         font-family: $mainFont;
         font-size: 20px;
+        color: $vanilacolor;
     }
     &__image{
         height: 160px;
@@ -90,15 +117,34 @@
         background-color: $vanilacolor;
         font-family: $mainFont;
         padding: 10px;
-        color: black;
+        color: $bluecolor;
         font-size: 16px;
         border-style: none;
         border-radius: 15%;
+
     }
 }
 
+.favorites__li{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 200px;
+    gap:20px;
+    padding: 20px;
+    text-align: left;
+    list-style:none;
+    margin-bottom: 20px;
+    border: 3px solid $vanilacolor;
+}
 .drinkslist{
-    padding: 20px;          
+    padding: 50px;
+    border: 3px solid $yellowcolor;
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;  
 }
 
 .drinkslist__maintitle{

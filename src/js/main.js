@@ -8,11 +8,12 @@ const btnResetFavorites = document.querySelector('.js-btn-reset-fav');
 const searchNotFoundText = document.querySelector('.js-search-text');
 const favoritesMainTitle = document.querySelector('.js-favorites-maintitle');
 const drinksMainTitle = document.querySelector('.js-drinks-maintitle');
+const favoritesSectionGift = document.querySelector('.js-fav-gift');
 
 let drinks = [];
 let favoritesDrinks = [];
 
-//Función render para pintar cada bebida
+// Función render para pintar cada bebida
 const renderOneDrink = (eachDrink, favoriteClass) => {
     let html = "";
     if(eachDrink.strDrinkThumb !== ''){
@@ -30,7 +31,7 @@ const renderOneDrink = (eachDrink, favoriteClass) => {
     return html;
 };
 
-//Función render para pintar los favoritos
+// Función render para pintar los favoritos
 function renderAllFavoritesDrinks(favDrink){
         const newItem = document.createElement('li');
         const newItem2 = document.createElement('h3');
@@ -45,7 +46,7 @@ function renderAllFavoritesDrinks(favDrink){
         newItem.id = favDrink.idDrink;
         newItem.appendChild(newItem2);
         newItem.appendChild(newItem3);
-        newItem.classList.add('favorites');
+        newItem.classList.add('favorites__li');
         newItem2.classList.add('favorites__title');
         newItem3.classList.add('favorites__image');
         newItem4.classList.add('favorites__btnx');
@@ -58,10 +59,12 @@ function renderAllFavoritesDrinks(favDrink){
             event.preventDefault();
             ulFavoritesDrinks.removeChild(newItem);
             const liClickedId = newItem.id;
-            const favoriteLiClickedIndex = favoritesDrinks.findIndex((item) => item.id === liClickedId);
+            const favoriteLiClickedIndex = favoritesDrinks.findIndex((item) => item.idDrink === liClickedId);
             favoritesDrinks.splice(favoriteLiClickedIndex, 1);
             localStorage.removeItem(liClickedId);
             newItem4.classList.add('hidden');
+            renderAllDrinks(drinks);
+            hideControlResetButton();
         };
         
         newItem4.addEventListener('click', handleDeleteFavorite);
@@ -70,15 +73,15 @@ function renderAllFavoritesDrinks(favDrink){
             ulFavoritesDrinks.replaceChildren();
             localStorage.clear();
             favoritesDrinks = [];
-            btnResetFavorites.classList.add('hidden');
-            favoritesMainTitle.classList.add('hidden');
+            renderAllDrinks(drinks);
+            hideControlResetButton();
         }
 
         btnResetFavorites.addEventListener('click', handleDeleteAllFavorites)
 
 };
 
-//Función añadir a favoritos
+// Función añadir a favoritos
 const addFavoritesDrinks = (event) => {
     console.log(event.currentTarget.id);
     const idListClicked = event.currentTarget.id;
@@ -93,10 +96,12 @@ const addFavoritesDrinks = (event) => {
     console.log(favoritesDrinks);
     renderAllFavoritesDrinks(drinkClicked);
     localStorage.setItem(idListClicked, JSON.stringify(drinkClicked));
+    renderAllDrinks(drinks);
+    hideControlResetButton();
 };
 
 
-//Función render para pintar todas las bebidas que coinciden con la búsqueda
+// Función render para pintar todas las bebidas que coinciden con la búsqueda
 const renderAllDrinks = (array) => {
     ulDrinks.innerHTML = "";
     for (let i = 0; i < array.length; i++ ){
@@ -115,7 +120,7 @@ const renderAllDrinks = (array) => {
 
 };
     
-//Función para traer los datos de la API
+// Función para traer los datos de la API
 function getDataAPI(){
     const valueInputSearch = inputSearch.value;
     fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${valueInputSearch}`)
@@ -134,7 +139,7 @@ function getDataAPI(){
   });
 };
 
-//Función para recoger los datos de los margarita y que los pinte
+// Función para recoger los datos de los margarita y que los pinte
 function getMargaritaAPI(){
     fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita`)
   .then(function (response) {
@@ -146,7 +151,7 @@ function getMargaritaAPI(){
   });
 };
 
-//Función que recoge los datos favoritos del local
+// Función que recoge los datos favoritos del local
 function favoritesLocal(){
     for (let i = 0; i < localStorage.length; i++) {
         let keyLocalStorage = localStorage.key(i);
@@ -160,15 +165,27 @@ function favoritesLocal(){
 // Función manejadora del evento sobre el botón de buscar
 function handleClick(event){
     event.preventDefault();
-    getDataAPI();
+    if (inputSearch.value === ""){
+        searchNotFoundText.innerHTML = "No se ha introducido ningún cocktail en la barra de búsqueda.";
+    }else{
+        searchNotFoundText.innerHTML = "";
+        getDataAPI();
+    } 
 };
 
 function initialPage(){
+    hideControlResetButton();
+    getMargaritaAPI();
+}
+
+function hideControlResetButton(){
     if(favoritesDrinks.length === 0){
         btnResetFavorites.classList.add('hidden');
-        favoritesMainTitle.classList.add('hidden');
+        favoritesSectionGift.classList.remove('hidden');         
+    }else{
+        favoritesSectionGift.classList.add('hidden');
+        btnResetFavorites.classList.remove('hidden'); 
     }
-    getMargaritaAPI()
 }
 
 

@@ -3,7 +3,6 @@
     justify-content: space-between;
     padding: 20px;
     background-color:$vanilacolor;
-    margin-top: 30px;
     &__image{
         width: 80px;
         height: 80px;
@@ -12,7 +11,8 @@
     &__text{
         font-family: $mainFont;
         font-size: 14px;
-        color:$yellowcolor;
+        color:$bluecolor;
+        font-weight: bold;
         align-content: center;
     }
 
