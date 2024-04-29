@@ -18,7 +18,7 @@ npm install
 
 npm start
 
-## ​✍️​**Buscador de cocktails**
+## ​:mag: ​**Buscador de cocktails**
 
 En el apartado de búsqueda podrás buscar los cocktails que más te gusten y al darle click a BUSCAR te aparecerá un listado de aquellos que coinciden con tu búsqueda. En el caso de que introduzcas una bebida que no encuentra coincidencias, aparecerá un pequeño mensaje que te hará saber que no hay coincidencias de cocktails con la búsqueda realizada.
 
