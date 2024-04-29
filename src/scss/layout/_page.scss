@@ -42,6 +42,9 @@
 }
 
 .drink{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
     width: 200px;
     height: 250px;
     text-align: left;

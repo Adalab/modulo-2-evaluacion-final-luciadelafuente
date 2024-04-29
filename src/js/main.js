@@ -55,6 +55,7 @@ function renderAllFavoritesDrinks(favDrink){
         ulFavoritesDrinks.appendChild(newItem);
         
         function handleDeleteFavorite(event){
+            event.preventDefault();
             ulFavoritesDrinks.removeChild(newItem);
             const liClickedId = newItem.id;
             const favoriteLiClickedIndex = favoritesDrinks.findIndex((item) => item.id === liClickedId);
@@ -133,6 +134,7 @@ function getDataAPI(){
   });
 };
 
+//Función para recoger los datos de los margarita y que los pinte
 function getMargaritaAPI(){
     fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita`)
   .then(function (response) {
