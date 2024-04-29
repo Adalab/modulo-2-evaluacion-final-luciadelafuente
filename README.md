@@ -25,10 +25,11 @@ En el apartado de búsqueda podrás buscar los cocktails que más te gusten y al
 Además, podrás ir añadiendo los cocktails que más te gusten a un listado de favoritos haciendo click sobre ellos. En el caso de que quieras eliminar un cocktail de tu listado de favoritos, bastará con hacer click sobre la X del mismo, y si lo que deseas es eliminar todo el listado de favoritos, podrás conseguirlo haciendo click sobre el botón RESET FAVORITOS.
 
 ## ✅**Tecnologías utilizadas**
-![image](https://github.com/Adalab/modulo-2-evaluacion-final-luciadelafuente/assets/161826787/22220f7d-ff2c-4a28-a930-8edc72249c11)
-![image](https://github.com/Adalab/modulo-2-evaluacion-final-luciadelafuente/assets/161826787/b7ff6549-a94a-4783-8a8c-7be0102e9ac5)
-![image](https://github.com/Adalab/modulo-2-evaluacion-final-luciadelafuente/assets/161826787/87447700-2316-4403-a145-777d8abb5c90)
-![image](https://github.com/Adalab/modulo-2-evaluacion-final-luciadelafuente/assets/161826787/bb081693-85ec-4da3-9df8-91e1237a35c6)
+![image](https://github.com/Adalab/modulo-2-evaluacion-final-luciadelafuente/assets/161826787/0a537936-2c7b-42a7-be65-2f23d318f7f3)
+![image](https://github.com/Adalab/modulo-2-evaluacion-final-luciadelafuente/assets/161826787/001b1aeb-99ab-4d35-9ab1-e6b1893e76dc)
+![image](https://github.com/Adalab/modulo-2-evaluacion-final-luciadelafuente/assets/161826787/9306a385-437d-45d1-807d-b7b110ec0c89)
+![image)](https://github.com/Adalab/modulo-2-evaluacion-final-luciadelafuente/assets/161826787/869ca967-b749-47b9-bb10-df6157cc239f)
+
 
 - HTML utilizado para crear la estructura de la aplicación.
 - CSS para darle estilo a la maquetación.
