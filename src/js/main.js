@@ -60,6 +60,7 @@ function renderAllFavoritesDrinks(favDrink){
             const favoriteLiClickedIndex = favoritesDrinks.findIndex((item) => item.id === liClickedId);
             favoritesDrinks.splice(favoriteLiClickedIndex, 1);
             localStorage.removeItem(liClickedId);
+            newItem4.classList.add('hidden');
         };
         
         newItem4.addEventListener('click', handleDeleteFavorite);
@@ -85,7 +86,7 @@ const addFavoritesDrinks = (event) => {
     const favoriteListClickedIndex = favoritesDrinks.findIndex((item) => item.idDrink === idListClicked);
     //favoriteListClickedIndex da -1 cuando el id no se encuentra en el array
     if(favoriteListClickedIndex === -1){
-        //añadir la paleta a mi array de favoritos si no está
+        //añadir la bebida a mi array de favoritos si no está
         favoritesDrinks.push(drinkClicked);
     }
     console.log(favoritesDrinks);
@@ -132,6 +133,17 @@ function getDataAPI(){
   });
 };
 
+function getMargaritaAPI(){
+    fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita`)
+  .then(function (response) {
+    return response.json();
+  })
+  .then(function (data) {
+    drinks = data.drinks;
+    renderAllDrinks(drinks);
+  });
+};
+
 //Función que recoge los datos favoritos del local
 function favoritesLocal(){
     for (let i = 0; i < localStorage.length; i++) {
@@ -154,11 +166,9 @@ function initialPage(){
         btnResetFavorites.classList.add('hidden');
         favoritesMainTitle.classList.add('hidden');
     }
-    if(drinks.length === 0){
-        drinksMainTitle.classList.add('hidden'); 
-    } 
-
+    getMargaritaAPI()
 }
+
 
 favoritesLocal();
 initialPage();
