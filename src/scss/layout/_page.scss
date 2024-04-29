@@ -1,0 +1,164 @@
+.body{
+    height: 100vh;
+}
+.main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:30px;
+    background-color: $bluecolor;
+    padding: 50px;
+}
+.lists{
+    display: flex;
+    gap:100px;
+}
+
+.search{
+    width: 700px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:30px;
+    padding: 30px;
+    &__section{
+      &--input{
+        padding: 10px;
+        border-color: $vanilacolor;
+        border-radius: 15%;
+      }  
+      &--btn{
+        background-color: $vanilacolor;
+        font-family: $mainFont;
+        padding: 10px;
+        color: $bluecolor;
+        font-size: 16px;
+        border-style: none;
+        border-radius: 15%;
+      }
+    }
+    &__text{
+        font-family: $mainFont;
+        color: $yellowcolor;
+        font-size: 20px;
+    }
+}
+.drinks__ul{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:20px;
+}
+.drink{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 200px;
+    text-align: left;
+    padding: 20px;
+    list-style:none;
+    border: 3px solid $vanilacolor;
+    &__title{
+        font-family: $mainFont;
+        font-size: 20px;
+        color: $vanilacolor;
+    }
+    &__image{
+        height: 160px;
+        object-fit: contain;
+    }
+}
+.favorites{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:20px;
+    border: 3px solid $vanilacolor;   
+    width: 35%;
+    padding: 30px;
+    &__maintitle{
+        font-family: $mainFont;
+        font-size: 25px;
+        color: $yellowcolor;
+        text-align: center;
+        padding:20px;
+    }
+    &__div{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap:20px;
+    }
+    &__text{
+        font-family: $mainFont;
+        color: $vanilacolor;
+        font-size: 20px;
+        text-align: center;
+    }
+    &__gift{
+        height: 160px;
+        object-fit: contain;
+    }
+    &__title{
+        font-family: $mainFont;
+        font-size: 20px;
+        color: $vanilacolor;
+    }
+    &__image{
+        height: 160px;
+        object-fit: contain;
+    }
+    &__btnx{
+        background-color: $vanilacolor;
+        padding:3px;
+    }
+    &__btnreset{
+        background-color: $vanilacolor;
+        font-family: $mainFont;
+        padding: 10px;
+        color: $bluecolor;
+        font-size: 16px;
+        border-style: none;
+        border-radius: 15%;
+
+    }
+}
+
+.favorites__li{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 200px;
+    gap:20px;
+    padding: 20px;
+    text-align: left;
+    list-style:none;
+    margin-bottom: 20px;
+    border: 3px solid $vanilacolor;
+}
+.drinkslist{
+    padding: 50px;
+    border: 3px solid $yellowcolor;
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;  
+}
+
+.drinkslist__maintitle{
+    font-family: $mainFont;
+    font-size: 25px;
+    color: $yellowcolor;
+    text-align: center;  
+}
+
+.favorites-changes{
+    background-color: $yellowcolor;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+
+.hidden {
+    display: none;
+  }

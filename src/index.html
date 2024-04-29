@@ -3,16 +3,44 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Adalab Web Starter Kit</title>
+    <title>ADACOCKTAILS</title>
     <link
       href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
       rel="stylesheet"
     />
-
-    <link rel="icon" href="./images/favicon.png" />
+    <link rel="icon" href="/images/favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Spinnaker&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./scss/main.scss">
   </head>
-
-  <body>
-    <h1>Búsqueda de bebidas</h1>
+  <load src="./partials/header.html"/>
+  <body class="body">
+    <main class="main">
+      <article class="search">
+        <section class="search__section">
+          <input class="js-input-search search__section--input" type="text">
+          <button class="js-btn-search search__section--btn">BUSCAR</button>
+        </section>
+          <p class="js-search-text search__text"></p>
+      </article>
+      <article class="lists">
+          <section class="js-section-fav-list favorites">
+            <h3 class="favorites__maintitle js-favorites-maintitle">LISTADO DE COCKTAILS FAVORITOS</h3>
+            <div class="js-fav-gift favorites__div">
+              <p class=" favorites__text">Añade aquí tus cocktails favoritos.</p>
+              <img class="favorites__gift" src="https://media1.tenor.com/m/hciR0vCNlAMAAAAC/drinking-cocktails.gif" alt="">
+            </div>
+            <ul class="js-fav-drink-list favorites__ul"></ul>
+            <button class="js-btn-reset-fav favorites__btnreset">RESET FAVORITOS</button>
+          </section>
+          <section class="drinkslist">
+            <h3 class="drinkslist__maintitle  js-drinks-maintitle">LISTADO DE COCKTAILS</h3>
+            <ul class="js-drink-list drinks__ul"></ul>
+          </section>
+      </article>
+    </main>
+    <load src="./partials/footer.html"/>
+    <script type="text/javascript" src="./js/main.js"></script>
   </body>
 </html>
