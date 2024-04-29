@@ -32,7 +32,7 @@ const renderOneDrink = (eachDrink, favoriteClass) => {
 };
 
 // Función render para pintar los favoritos
-function renderAllFavoritesDrinks(favDrink){
+function renderFavoriteDrink(favDrink){
         const newItem = document.createElement('li');
         const newItem2 = document.createElement('h3');
         const newItem3 = document.createElement('img');
@@ -92,12 +92,12 @@ const addFavoritesDrinks = (event) => {
     if(favoriteListClickedIndex === -1){
         //añadir la bebida a mi array de favoritos si no está
         favoritesDrinks.push(drinkClicked);
+        renderFavoriteDrink(drinkClicked);
+        localStorage.setItem(idListClicked, JSON.stringify(drinkClicked));
+        renderAllDrinks(drinks);
+        hideControlResetButton();
     }
     console.log(favoritesDrinks);
-    renderAllFavoritesDrinks(drinkClicked);
-    localStorage.setItem(idListClicked, JSON.stringify(drinkClicked));
-    renderAllDrinks(drinks);
-    hideControlResetButton();
 };
 
 
@@ -158,7 +158,7 @@ function favoritesLocal(){
         const valueLocalStorage = localStorage.getItem(keyLocalStorage);
         const favoriteDrink = JSON.parse(valueLocalStorage);
         favoritesDrinks.push(favoriteDrink);
-        renderAllFavoritesDrinks(favoriteDrink);
+        renderFavoriteDrink(favoriteDrink);
     }
 };
 
