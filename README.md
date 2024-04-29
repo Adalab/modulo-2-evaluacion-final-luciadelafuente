@@ -11,7 +11,7 @@ Para acceder al proyecto puedes clonar el repositorio:
 
 git clone https://github.com/Adalab/modulo-2-evaluacion-final-luciadelafuente
 
-## 🛠️ **Abre y ejecuta el proyecto**
+## ⌨️​ **Abre y ejecuta el proyecto**
 Para visualizarlo en el navegador:
 
 npm install
