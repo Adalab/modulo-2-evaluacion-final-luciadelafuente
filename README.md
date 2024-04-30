@@ -31,6 +31,6 @@ Además, podrás ir añadiendo los cocktails que más te gusten a un listado de 
 ![image](https://github.com/Adalab/modulo-2-evaluacion-final-luciadelafuente/assets/161826787/e9f31d81-38c7-4fff-9bba-6d498202fd9d)
 
 - HTML utilizado para crear la estructura de la aplicación.
-- CSS para darle estilo a la maquetación.
+- CSS para darle estilo a la maquetación y hacer el diseño responsive.
 - SASS para mantener el código ordenado y que tenga fácil acceso.
 - JavaScript para darle funcionalidad a la página web.
