@@ -1,6 +1,7 @@
 .body{
     height: 100vh;
 }
+
 .main{
     display: flex;
     flex-direction: column;
@@ -9,23 +10,28 @@
     background-color: $bluecolor;
     padding: 50px;
 }
-.lists{
-    display: flex;
-    gap:100px;
-}
 
 .search{
-    width: 700px;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap:30px;
-    padding: 30px;
+    // padding: 30px;
+    @media (min-width:768px){
+        width: 700px;
+     }
     &__section{
       &--input{
         padding: 10px;
+        margin-right: 10px;
         border-color: $vanilacolor;
         border-radius: 15%;
+        width: 160px;
+        
+        @media (min-width:768px){
+            width: 250px;
+         }
       }  
       &--btn{
         background-color: $vanilacolor;
@@ -35,20 +41,52 @@
         font-size: 16px;
         border-style: none;
         border-radius: 15%;
+        @media (min-width:768px){
+            width: 130px;
+         }
       }
     }
     &__text{
         font-family: $mainFont;
         color: $yellowcolor;
-        font-size: 20px;
+        font-size: 12px;
+        text-align: center;
+        @media (min-width:768px){
+            font-size: 20px;
+         }
     }
 }
-.drinks__ul{
+
+.lists{
+    display: flex;
+    flex-direction: column;
+    gap:100px;
+    @media (min-width:768px){
+        flex-direction: row;
+     }
+}
+
+.drinkslist{
+    padding: 50px;
+    border: 3px solid $yellowcolor;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap:20px;
+    gap: 20px;
+    @media (min-width:768px){
+        width: 75%;
+     }
+   
+    &__maintitle{
+        font-family: $mainFont;
+        font-size: 25px;
+        color: $yellowcolor;
+        text-align: center;
+
+    }
 }
+
 .drink{
     display: flex;
     flex-direction: column;
@@ -69,14 +107,18 @@
         object-fit: contain;
     }
 }
+
 .favorites{
     display: flex;
     flex-direction: column;
     align-items: center;
     gap:20px;
     border: 3px solid $vanilacolor;   
-    width: 35%;
+    width: 100%;
     padding: 30px;
+    @media (min-width:768px){
+        width: 35%;
+     }
     &__maintitle{
         font-family: $mainFont;
         font-size: 25px;
@@ -121,7 +163,6 @@
         font-size: 16px;
         border-style: none;
         border-radius: 15%;
-
     }
 }
 
@@ -137,22 +178,6 @@
     margin-bottom: 20px;
     border: 3px solid $vanilacolor;
 }
-.drinkslist{
-    padding: 50px;
-    border: 3px solid $yellowcolor;
-    width: 75%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px; 
-}
-
-.drinkslist__maintitle{
-    font-family: $mainFont;
-    font-size: 25px;
-    color: $yellowcolor;
-    text-align: center;  
-}
 
 .favorites-changes{
     background-color: $yellowcolor;
@@ -161,4 +186,4 @@
 
 .hidden {
     display: none;
-  }
+}
