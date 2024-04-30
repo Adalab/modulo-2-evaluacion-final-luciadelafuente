@@ -10,10 +10,13 @@
     }
     &__text{
         font-family: $mainFont;
-        font-size: 14px;
+        font-size: 12px;
         color:$bluecolor;
         font-weight: bold;
         align-content: center;
+        @media (min-width:768px){
+            font-size: 14px;
+         }
     }
 
 }
