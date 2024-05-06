@@ -1,5 +1,6 @@
 'use strict';
 
+// Variables globales
 const inputSearch = document.querySelector('.js-input-search');
 const btnSearch = document.querySelector('.js-btn-search');
 const ulDrinks = document.querySelector('.js-drink-list');
@@ -9,7 +10,9 @@ const searchNotFoundText = document.querySelector('.js-search-text');
 const favoritesMainTitle = document.querySelector('.js-favorites-maintitle');
 const drinksMainTitle = document.querySelector('.js-drinks-maintitle');
 const favoritesSectionGift = document.querySelector('.js-fav-gift');
+const btnReset = document.querySelector('.js-btn-reset');
 
+// Arrays globales
 let drinks = [];
 let favoritesDrinks = [];
 
@@ -173,12 +176,19 @@ function handleClick(event){
     } 
 };
 
+// Función botón reset búsqueda
+function handleClickReset(event){
+    getMargaritaAPI();
+    inputSearch.value = "";
+}
+
+// Función que se pinta cuando carga la página
 function initialPage(){
     hideControlResetButton();
     getMargaritaAPI();
 }
 
-//
+// Función que oculta botón de reset favoritos cuando no hay favoritos y muestra el gift, o al contrario
 function hideControlResetButton(){
     if(favoritesDrinks.length === 0){
         btnResetFavorites.classList.add('hidden');
@@ -190,8 +200,10 @@ function hideControlResetButton(){
 }
 
 
+// Lo que se ve cuando carga la página
 favoritesLocal();
 initialPage();
 
 
 btnSearch.addEventListener('click', handleClick);
+btnReset.addEventListener('click', handleClickReset)
