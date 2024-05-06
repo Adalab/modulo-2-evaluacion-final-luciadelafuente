@@ -178,6 +178,7 @@ function initialPage(){
     getMargaritaAPI();
 }
 
+//
 function hideControlResetButton(){
     if(favoritesDrinks.length === 0){
         btnResetFavorites.classList.add('hidden');
