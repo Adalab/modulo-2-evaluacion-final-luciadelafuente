@@ -13,17 +13,22 @@ const favoritesSectionGift = document.querySelector('.js-fav-gift');
 let drinks = [];
 let favoritesDrinks = [];
 
+
+
 // Función render para pintar cada bebida
 const renderOneDrink = (eachDrink, favoriteClass) => {
     let html = "";
+    let alcholicText = eachDrink.strAlcoholic === 'Alcoholic' ? 'Tiene alcohol': 'Sin alcohol';
     if(eachDrink.strDrinkThumb !== ''){
         html = `<li class="drink js-drink ${favoriteClass}" id="${eachDrink.idDrink}">
         <h3 class="drink__title">${eachDrink.strDrink}</h3>
+        <p>${alcholicText}</p>
         <img class="drink__image" src="${eachDrink.strDrinkThumb}" alt="">
      </li>`
     }else{
         html = `<li class="js-drink ${favoriteClass}" id="${eachDrink.idDrink}">
         <h3>${eachDrink.strDrink}</h3>
+        <p>${alcholicText}</p>
         <img src="https://via.placeholder.com/210x295/ffffff/666666/?text=NOTIMAGEFOUND" alt="">
      </li>`
     }
@@ -77,7 +82,17 @@ function renderFavoriteDrink(favDrink){
             hideControlResetButton();
         }
 
-        btnResetFavorites.addEventListener('click', handleDeleteAllFavorites)
+        btnResetFavorites.addEventListener('click', handleDeleteAllFavorites);
+
+        function handleClickTitle(event){
+            const idFavClicked = event.currentTarget.id;
+            const drinkFavClicked =  favoritesDrinks.find((item) => item.idDrink === idFavClicked);
+            console.log(drinkFavClicked.strDrink);
+
+
+        }
+
+        newItem.addEventListener('click', handleClickTitle);
 
 };
 
