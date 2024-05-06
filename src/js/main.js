@@ -14,7 +14,6 @@ let drinks = [];
 let favoritesDrinks = [];
 
 
-
 // Función render para pintar cada bebida
 const renderOneDrink = (eachDrink, favoriteClass) => {
     let html = "";
@@ -36,6 +35,34 @@ const renderOneDrink = (eachDrink, favoriteClass) => {
     return html;
 };
 
+// Función borrar un favorito
+function handleDeleteFavorite(event){
+    event.preventDefault();
+    ulFavoritesDrinks.removeChild(newItem);
+    const liClickedId = newItem.id;
+    const favoriteLiClickedIndex = favoritesDrinks.findIndex((item) => item.idDrink === liClickedId);
+    favoritesDrinks.splice(favoriteLiClickedIndex, 1);
+    localStorage.removeItem(liClickedId);
+    newItem4.classList.add('hidden');
+    renderAllDrinks(drinks);
+    hideControlResetButton();
+};
+
+// Función borrar todos los favoritos
+function handleDeleteAllFavorites(event){
+    ulFavoritesDrinks.replaceChildren();
+    localStorage.clear();
+    favoritesDrinks = [];
+    renderAllDrinks(drinks);
+    hideControlResetButton();
+}
+
+// Función pintar en consola nombre favorito clickado
+function handleClickTitle(event){
+    const idFavClicked = event.currentTarget.id;
+    const drinkFavClicked =  favoritesDrinks.find((item) => item.idDrink === idFavClicked);
+    console.log(drinkFavClicked.strDrink);
+}
 // Función render para pintar los favoritos
 function renderFavoriteDrink(favDrink){
         const newItem = document.createElement('li');
@@ -60,38 +87,8 @@ function renderFavoriteDrink(favDrink){
         ulFavoritesDrinks.appendChild(newItem4);
         ulFavoritesDrinks.appendChild(newItem);
         
-        function handleDeleteFavorite(event){
-            event.preventDefault();
-            ulFavoritesDrinks.removeChild(newItem);
-            const liClickedId = newItem.id;
-            const favoriteLiClickedIndex = favoritesDrinks.findIndex((item) => item.idDrink === liClickedId);
-            favoritesDrinks.splice(favoriteLiClickedIndex, 1);
-            localStorage.removeItem(liClickedId);
-            newItem4.classList.add('hidden');
-            renderAllDrinks(drinks);
-            hideControlResetButton();
-        };
-        
         newItem4.addEventListener('click', handleDeleteFavorite);
-
-        function handleDeleteAllFavorites(event){
-            ulFavoritesDrinks.replaceChildren();
-            localStorage.clear();
-            favoritesDrinks = [];
-            renderAllDrinks(drinks);
-            hideControlResetButton();
-        }
-
         btnResetFavorites.addEventListener('click', handleDeleteAllFavorites);
-
-        function handleClickTitle(event){
-            const idFavClicked = event.currentTarget.id;
-            const drinkFavClicked =  favoritesDrinks.find((item) => item.idDrink === idFavClicked);
-            console.log(drinkFavClicked.strDrink);
-
-
-        }
-
         newItem.addEventListener('click', handleClickTitle);
 
 };
