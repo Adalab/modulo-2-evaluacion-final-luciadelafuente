@@ -111,6 +111,10 @@
         height: 160px;
         object-fit: contain;
     }
+    &__text{
+        color: $yellowcolor;
+        font-family: $mainFont;
+    }
 }
 
 .favorites{

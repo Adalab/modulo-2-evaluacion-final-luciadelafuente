@@ -24,13 +24,13 @@ const renderOneDrink = (eachDrink, favoriteClass) => {
     if(eachDrink.strDrinkThumb !== ''){
         html = `<li class="drink js-drink ${favoriteClass}" id="${eachDrink.idDrink}">
         <h3 class="drink__title">${eachDrink.strDrink}</h3>
-        <p>${alcholicText}</p>
+        <p class="drink__text">${alcholicText}</p>
         <img class="drink__image" src="${eachDrink.strDrinkThumb}" alt="">
      </li>`
     }else{
         html = `<li class="js-drink ${favoriteClass}" id="${eachDrink.idDrink}">
         <h3>${eachDrink.strDrink}</h3>
-        <p>${alcholicText}</p>
+        <p class="drink__text">${alcholicText}</p>
         <img src="https://via.placeholder.com/210x295/ffffff/666666/?text=NOTIMAGEFOUND" alt="">
      </li>`
     }
